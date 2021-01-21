@@ -1,5 +1,6 @@
 package com.prijilevschi.schimbValutar.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,7 @@ public class CursValutarModel {
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_currency", nullable = false)
+    @JsonBackReference
     private DictionarValuteModel dictionarValuteModel;
     private Integer ordinal;
     private BigDecimal exchangeRate;

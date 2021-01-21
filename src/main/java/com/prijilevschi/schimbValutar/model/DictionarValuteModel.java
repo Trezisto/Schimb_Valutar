@@ -1,5 +1,6 @@
 package com.prijilevschi.schimbValutar.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,5 +22,6 @@ public class DictionarValuteModel {
     private String code;
     @OneToMany(mappedBy = "dictionarValuteModel", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Set<CursValutarModel> cursValutar;
 }
